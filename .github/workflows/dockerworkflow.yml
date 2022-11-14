@@ -23,8 +23,7 @@ jobs:
        with:
             registry: ghcr.io
             username: $GITHUB_USER
-            password: $GITHUB_TOKEN
-
+            password: ${{ secrets.GITHUB_TOKEN }}
      - name: build docker image
        env:
           REGISTRY: ghcr.io
