@@ -23,3 +23,6 @@ jobs:
           IMAGE_NAME: sampleimage
        run:  
             docker build -t ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1 . 
+     - name: docker image list
+       run:
+            docker images
