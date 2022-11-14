@@ -30,7 +30,7 @@ jobs:
        env:
           REGISTRY: ghcr.io
           OWNER: ${{ github.actor}}
-          REPOSITORY: project
+          REPOSITORY: ./project
           IMAGE_NAME: sampleimage
        run: 
           docker push ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1
