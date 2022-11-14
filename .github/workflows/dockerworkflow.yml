@@ -3,9 +3,9 @@ name: docker build image
   workflow_dispatch: {}
 
   push:
-   branches: none
+   branches: main
   pull_request:
-   branches: none
+   branches: main
   workflow_dispatch:
  jobs:
    build-container:
