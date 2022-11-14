@@ -26,3 +26,12 @@ jobs:
      - name: docker image list
        run:
             docker images
+     - name: docker push
+       env:
+          REGISTRY: ghcr.io
+          OWNER: ${{ github.actor}}
+          REPOSITORY: sonysemiconductorsolutions
+          IMAGE_NAME: sampleimage
+       run: 
+          docker push ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1
+
