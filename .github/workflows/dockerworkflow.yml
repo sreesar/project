@@ -1,23 +1,25 @@
 name: docker build image
- on:
+on:
   workflow_dispatch: {}
 
   push:
-   branches: main
+   branches: 
+    - main
   pull_request:
-   branches: main
-  workflow_dispatch:
- jobs:
+   branches: 
+    - main
+  
+jobs:
    build-container:
     runs-on: ubuntu-lastest
     steps:
-     uses: actions/checkout@v3
+     - uses: actions/checkout@v3
      
-     name: build docker image
-     env:
+     - name: build docker image
+       env:
           REGISTRY: ghcr.io
           OWNER: ${{ github.actor }}
           REPOSITORY: project
           IMAGE_NAME: sampleimage
-         run:  
+       run:  
             docker build -t ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1 . 
