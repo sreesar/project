@@ -43,5 +43,14 @@ jobs:
           image_name: ${{ github.repository }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           docker_io_token: ${{ secrets.DOCKER_IO_ACCESS_TOKEN }} 
+          
+     - name: pull image
+       env:
+          REGISTRY: ghcr.io
+          OWNER: ${{ github.actor }}
+          REPOSITORY: project
+          IMAGE_NAME: sampleimage
+       run: |
+            docker pull ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1
 
 
