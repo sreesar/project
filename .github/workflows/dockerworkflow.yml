@@ -1,5 +1,7 @@
-name:
+name: docker build image
  on:
+  workflow_dispatch: {}
+
   push:
    branches: none
   pull_request:
@@ -9,7 +11,13 @@ name:
    build-container:
     runs-on: ubuntu-lastest
     steps:
-     -uses: actions/checkout@v3
-     -name: Build the Docker image
-    working-repository: project
-     run: dockerbuild . --file Dockerfile 
+     uses: actions/checkout@v3
+     
+     name: build docker image
+     env:
+          REGISTRY: ghcr.io
+          OWNER: ${{ github.actor }}
+          REPOSITORY: project
+          IMAGE_NAME: sampleimage
+         run:  
+            docker build -t ${{env.REGISTRY}}/${{env.REPOSITORY}}/${{env.IMAGE_NAME}}:1 . 
