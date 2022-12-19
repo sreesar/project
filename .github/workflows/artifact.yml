@@ -1,17 +1,17 @@
 name: artifact path specifications
 on:
- workflow_dispatch: {}
+  workflow_dispatch: {}
 jobs:
   runs-on: ubuntu-latest
-  steps:
-    - name: build and path specifications
-      run: actions/checkout@v2
-    - name: npm install, build, and test
-      run: |
+    steps:
+      - name: build and path specifications
+        run: actions/checkout@v2
+      - name: npm install, build, and test
+        run: |
           npm install
           npm run build --if-present
           npm test
-    - name: Step 3 - Use the Upload Artifact GitHub Action
-      uses: actions/upload-artifact@v2
-      with:
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with:
          path: download
