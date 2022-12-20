@@ -14,7 +14,7 @@ jobs:
        name: my-artifact1
        path: my_file.txt
        retention-days: 5
-  job2:
+job2:
     test:
        runs-on: ubuntu-latest
        steps:
