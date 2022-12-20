@@ -1,19 +1,14 @@
-name: artifact path specifications
+name: artifact upload one floder
 on:
   workflow_dispatch: {}
 jobs:
-  runs-on: ubuntu-latest
-   steps:
-    - uses: actions/upload-artifact@v3
+  build_upload:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
         with:
-          path: world.txt
-
-    - run: echo howdy > extra-file.txt
-    - uses: actions/upload-artifact@v3
-      with:
-        path: extra-file.txt
-
-    - run: echo hello > world.txt
-    - uses: actions/upload-artifact@v3
-      with:
-        path: world.txt
+          name: code-coverage-report
+          path: output/test/code-coverage.html
