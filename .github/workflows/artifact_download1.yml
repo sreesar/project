@@ -1,4 +1,4 @@
-name: Artifcate_upload
+name: Artifcate_Download
 on: push 
 
 jobs:
