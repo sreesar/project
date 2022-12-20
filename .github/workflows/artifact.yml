@@ -3,15 +3,17 @@ on:
   workflow_dispatch: {}
 jobs:
   runs-on: ubuntu-latest
-    steps:
-      - name: build and path specifications
-        run: actions/checkout@v2
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm test
-      - name: Step 3 - Use the Upload Artifact GitHub Action
-        uses: actions/upload-artifact@v2
+   steps:
+    - uses: actions/upload-artifact@v3
         with:
-         path: download
+          path: world.txt
+
+    - run: echo howdy > extra-file.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        path: extra-file.txt
+
+    - run: echo hello > world.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        path: world.txt
