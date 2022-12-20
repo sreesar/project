@@ -1,20 +1,26 @@
-name: artifact upload one floder
-on:
-  workflow_dispatch: {}
+name: Firebase CI
+
+on: push 
+
 jobs:
-  build_upload:
-     runs-on: ubuntu-latest
-     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/f
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Archive Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
         
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm test
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage-report
-          path: output/test/code-coverage.html
