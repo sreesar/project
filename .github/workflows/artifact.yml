@@ -9,10 +9,10 @@ jobs:
     - uses: actions/checkout@v2
    
     - name: 'Upload Artifact'
-      uses: actions/download-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
        name: my-artifact1
        path: sreesar/project/artifact/txt.html
-      # retention-days: 5
+       retention-days: 5
     
         
