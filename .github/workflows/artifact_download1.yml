@@ -1,24 +1,27 @@
-name: download artifact 
-on:
- workflow_dispatch: {}
- jobs:
-   steps:
-    - name: checkout the code
-    - runs-on: ubuntu-latest
-    - name: this workflow code
-      run: echo "here we use artificat "
-    - name: Download artifact
-      id: download-artifact
-      uses: dawidd6/action-download-artifact@v2
-      with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        workflow: artifact.yml
-        workflow_conclusion: success
-        branch: master
-        run_number: 30
-        name: artifact1
-        path: sreesar/project/
-        check_artifacts:  false
-        search_artifacts: false
-        skip_unpack: false
-        if_no_artifact_found: fail
+name: Artifcate_upload
+on: push 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: checkout the code
+       uses: actions/checkout@v2
+       
+       #run: echo "here we use artificat "
+     - name: Download artifact
+       id: download-artifact
+       uses: dawidd6/action-download-artifact@v2
+       with:
+         github_token: ${{secrets.GITHUB_TOKEN}}
+         workflow: artifact.yml
+         workflow_conclusion: success
+         branch: master
+         run_number: 30
+         name: artifact1
+         path: sreesar/project/
+         check_artifacts:  false
+         search_artifacts: false
+         skip_unpack: false
+         if_no_artifact_found: fail
