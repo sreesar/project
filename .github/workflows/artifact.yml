@@ -19,3 +19,4 @@ jobs:
       with:
         name: my-artifact
         path: ./project/artifact
+        destination: my-artifact
