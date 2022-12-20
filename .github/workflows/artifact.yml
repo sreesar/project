@@ -12,7 +12,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
        name: my-artifact1
-       path: sreesar/project/artifact/txt.html
+       path: my_file.txt
        retention-days: 5
     
         
