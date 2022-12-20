@@ -1,0 +1,12 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call another workflow
+        run: echo " this workflow call another workflows"
+    call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/blank.yml
