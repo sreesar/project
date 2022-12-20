@@ -15,15 +15,6 @@ jobs:
        path: my_file.txt
        retention-days: 5
 
-  test:
-       runs-on: ubuntu-latest
-       steps:
-        - uses: actions/download-artifact@v3
-          with:
-          name: my-artifact
-          path: path/to/artifact
-    
-        - name: Display structure of downloaded files
-          run: ls -R
-          working-directory: path/to/artifact
+  
+        
         
