@@ -26,4 +26,8 @@ jobs:
         with: 
           name: assets-for-download
           path: downloads
-          cp: assests-for-download to sreesar/project/assests-for-download
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+            source: "assests-for-download"
+            target: "github/sreesar/project/"
