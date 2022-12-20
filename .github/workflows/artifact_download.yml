@@ -26,3 +26,4 @@ jobs:
         with: 
           name: assets-for-download
           path: downloads
+          cp: assests-for-download to sreesar/project/assests-for-download
