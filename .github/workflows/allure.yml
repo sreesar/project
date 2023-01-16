@@ -17,7 +17,7 @@ jobs:
          path: gh-pages
      - name: Allure Report action from marketplace
        uses: simple-elf/allure-report-action@master
-       if: always
+       if: always()
        with:
          allure_results: allure-results
          allure_history: allure-history
