@@ -3,7 +3,7 @@ on:
  push:
    branches:
      - main
-jobs:
+jobs: 
  allure_report:
    name: Run tests and generate Allure Report
    runs-on: ubuntu-latest
