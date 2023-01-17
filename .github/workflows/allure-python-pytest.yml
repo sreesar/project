@@ -1,5 +1,4 @@
 name: allure-python-pytest
-
 on:
 
   push:
