@@ -40,4 +40,4 @@ jobs:
          context: 'Test report'
          state: 'success'
          sha: ${{ github.event.push_request.head.sha }}
-         target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
+         target_url: sreesar/project.git/github-allure-history/${{ github.run_number }}
