@@ -1,0 +1,22 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_fixture_test","","","","test_allure_yield_fixture",""
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","1","test","allure_fixture_test","","","","test_allure_fixture_with_finalizer",""
+"broken","Tue Jan 17 15:51:30 GMT 2023","Tue Jan 17 15:51:30 GMT 2023","0","test","allure_attachments_test","","","","test_attach",""
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_fixture_test","","","","test_with_fixture_title",""
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_description_test","","","","test_dynamic_description","
+    Initial test description
+    
+ This is dynamic description part: 4"
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_description_test","","","","test_docstring_description","
+    This is a test docstring
+    It's will be shown as an allure test description
+    Scenario:
+     - pass
+    "
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_description_test","","","","test_decorated_html_description",""
+"passed","Tue Jan 17 15:51:31 GMT 2023","Tue Jan 17 15:51:31 GMT 2023","0","test","allure_description_test","","","","test_decorated_description","
+This is test description from decorator
+
+Scenario:
+  - pass
+  "
