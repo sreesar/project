@@ -1,6 +1,5 @@
 name: allure-python-pytest
 on:
-
   push:
     branches-ignore:
       - '!master'
