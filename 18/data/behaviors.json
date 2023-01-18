@@ -1,1 +1,0 @@
-{"uid":"b1a8273437954620fa374b796ffaacdd","children":[{"name":"test_attach","uid":"3f244fc79a2194a9","parentUid":"b1a8273437954620fa374b796ffaacdd","status":"broken","time":{"start":1673970615715,"stop":1673970615716,"duration":1},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[]}],"name":"behaviors"}
