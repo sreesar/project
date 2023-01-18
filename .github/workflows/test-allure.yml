@@ -48,4 +48,4 @@ jobs:
             context: 'Test Results Link'
             state: 'success'
             sha: ${{ github.sha }}
-            target_url: https://sreesar.github.io/project.git/${{ github.run_number }}
+            target_url: https://sreesar.github.io/project/${{ github.run_number }}
