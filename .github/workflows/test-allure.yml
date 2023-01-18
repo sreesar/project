@@ -1,5 +1,4 @@
 name: allure report
-
 on:
   workflow_dispatch:
 
